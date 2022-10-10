@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { MenuComponent } from './menu/menu.component';
 import { SecureComponent } from './secure.component';
+import { RouterModule } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -10,10 +15,16 @@ import { SecureComponent } from './secure.component';
   declarations: [
     NavComponent,
     MenuComponent,
-    SecureComponent
+    SecureComponent,
+    ProfileComponent,
+    DashboardComponent,
+    UsersComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   exports: [
