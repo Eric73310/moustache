@@ -6,25 +6,28 @@ import { RegisterComponent } from './public/register/register.component';
 import { DashboardComponent } from './secure/dashboard/dashboard.component';
 import { ProfileComponent } from './secure/profile/profile.component';
 import { SecureComponent } from './secure/secure.component';
+import { UserCreateComponent } from './secure/users/user-create/user-create.component';
 import { UsersComponent } from './secure/users/users.component';
 
 const routes: Routes = [
   {
-    path: '', 
-  component: SecureComponent,
-  children: [
-    {path: '', redirectTo:'/dashboard', pathMatch: 'full'},
-    {path: 'dashboard', component: DashboardComponent},
-    {path: 'users', component: UsersComponent},
-    {path: 'profile', component: ProfileComponent},
-  ]
-},
+    path: '',
+    component: SecureComponent,
+    children: [
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'users', component: UsersComponent },
+      { path: 'users/create', component: UserCreateComponent},
+
+    ]
+  },
   {
-    path: '', 
+    path: '',
     component: PublicComponent,
     children: [
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent},
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
     ]
   },
 ];

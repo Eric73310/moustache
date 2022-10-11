@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+    <div class="mb-3">
+      <label>First Name</label>
+      <input class="form-control" nane="firstName" formControlName="firstName">
+    </div>
+     <div class="mb-3">
+      <label>Last Name</label>
+      <input class="form-control" nane="lastName" formControlName="lastName">
+    </div>
+    <div class="mb-3">
+      <label>Email</label>
+      <input class="form-control" name="email" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label>Role</label>
+      <select class="form-control" name="roleId" formControlName="roleId">
+        <option>Select</option>
+      </select>
+     </div>
+    <button class="btn btn-outline-success">Save</button>
+  </form>
+  
