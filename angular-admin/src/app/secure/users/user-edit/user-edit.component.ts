@@ -36,11 +36,22 @@ export class UserEditComponent implements OnInit {
       roles => this.roles = roles
     );
 
-    this.id = this.route.snapshot.params.
+    this.id = this.route.snapshot.params['id'];
+
+    this.userServce.get(this.id).subscribe(
+      user => {
+        this.form.patchValue({
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+          roleId: user.role.id
+        });
+      }
+    )
   }
 
   submit(): void {
-    this.userServce.create(this.form.getRawValue()).subscribe(
+    this.userServce.update(this.id, this.form.getRawValue()).subscribe(
       () => this.router.navigate(['/users'])
     );
   }
