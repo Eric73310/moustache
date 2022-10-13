@@ -5,8 +5,6 @@ import { RestService } from './rest.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService extends RestService {
-
-  endpoint = `${environment.api}/users`
-
+export class ProductService extends RestService{
+  endpoint = `${environment.api}/products`;
 }
