@@ -46,7 +46,6 @@ export class AuthController {
     
     ){
         const user = await this.userService.findOneBy({email});
-
         if(!user) {
             throw new NotFoundException('User not found!')
         }

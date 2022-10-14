@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AbstractService } from 'src/common/abstract.service';
 import { PaginatedResult } from 'src/common/paginated-result.interface';
-import { Repository } from 'typeorm';
+import { Any, Repository } from 'typeorm';
 import { User } from './models/user.entity';
 
 @Injectable()
@@ -23,6 +23,11 @@ export class UserService extends AbstractService {
             }),
             meta
         }
+    }
+
+    async findOneBy(condition: any): Promise<User> {
+        const user: User = await super.findOneBy(condition, ['role']);
+        return user;
     }
 }
 

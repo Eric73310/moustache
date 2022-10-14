@@ -38,7 +38,7 @@ export class ProductController {
         return this.productService.findOneBy({id});
     }
 
-    @Delete('id')
+    @Delete(':id')
     async delete(@Param('id') id: number){
         return this.productService.delete(id);
     }

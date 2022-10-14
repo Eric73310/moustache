@@ -11,8 +11,8 @@ export class UserCreateDto{
     @IsEmail()
     email: string;
 
-    @IsNotEmpty()
-    password: string;
+    // @IsNotEmpty()
+    // password: string;
 
     @IsNotEmpty()
     roleId: number;

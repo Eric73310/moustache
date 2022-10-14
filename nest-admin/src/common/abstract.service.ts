@@ -38,13 +38,11 @@ export abstract class AbstractService {
         return this.repository.save(data);
     }
 
-    async findOneBy(condition, relations = []): Promise<any> {
-        const where = {
-            id: condition.id
-        }
-        const toto = await this.repository.findOne({ relations: { role: true }, where });
+    async findOneBy(condition, relations:string[] = []): Promise<any> {
+        
+        const result = await this.repository.findOne({ relations, where: condition });
 
-        return toto;
+        return result;
     }
 
     async update(id: number, data): Promise<any> {
