@@ -34,8 +34,6 @@ export class OrdersComponent implements OnInit {
   load(page = 1): void {
     this.orderService.all(page).subscribe(
       res => {
-        console.log(res)
-
         this.orders = res;
         this.lastPage = res.meta.lastPage;
       }
@@ -44,24 +42,9 @@ export class OrdersComponent implements OnInit {
 
   select(id: number): void {
     this.selected = this.selected === id ? 0 : id;
-   
   }
 
   itemState(id: number): string {
     return this.selected === id ? 'show' : 'hide';
   }
-  
-  export(): void {
-    this.orderService.export().subscribe(
-      res => {
-        const blob = new Blob([res], {type: 'text/csv'});
-        const downloadUrl = window.URL.createObjectURL(res);
-        const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.download = 'orders.csv';
-        link.click();
-      }
-    );
-  }
-
 }

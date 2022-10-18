@@ -23,13 +23,13 @@ export class UserController {
     }
 
     @Get()
-    //@HasPermission('users')
+    @HasPermission('users')
     async all(@Query('page')page = 1): Promise<PaginatedResult> {
         return this.userService.paginate(page);
     }
 
     @Post()
-    //@HasPermission('users')
+    @HasPermission('users')
     async create(@Body() body: UserCreateDto): Promise<User> {
         const password = await bcrypt.hash('1234', 12);
 
@@ -44,7 +44,7 @@ export class UserController {
     }
 
     @Get(':id')
-    //@HasPermission('users')
+    @HasPermission('users')
     async get(@Param('id') id:number) {
         return this.userService.findOneBy({id});
     }
@@ -100,7 +100,7 @@ export class UserController {
     }
 
     @Delete(':id')
-    //@HasPermission('users')
+    @HasPermission('users')
     async delete(@Param('id') id:number){
          return this.userService.delete(id);
     }

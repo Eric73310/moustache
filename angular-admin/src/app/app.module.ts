@@ -8,6 +8,7 @@ import { PublicModule } from './public/public.module';
 import { SecureModule } from './secure/secure.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CredentialInterceptor } from './interceptors/credential.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CredentialInterceptor } from './interceptors/credential.interceptor';
     SecureModule,
     PublicModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {

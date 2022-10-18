@@ -1,8 +1,8 @@
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" routerLink="/">Company name</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" routerLink="/">Manageable</a>
   
   <nav class="my-2 my-md-0 mr-md-3">
     <a routerLink="/profile" class="p-2 text-white text-decoration-none">{{user?.firstName}} {{user?.lastName}}</a>
-    <a routerLink="/login" class="p-2 text-white text-decoration-none" (click)="logout()">Sign Out</a>
+    <a routerLink="/login" class="p-2 text-white text-decoration-none" (click)="logout()"><i class="ri-logout-box-r-line"></i> Sign Out</a>
   </nav>
 </header>

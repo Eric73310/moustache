@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RegexEnum } from 'src/app/enums/regex';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
         validators: [Validators.required, Validators.email]
       }),
       password: this.formBuilder.control('', {
-        validators: [Validators.required]
+        validators: [Validators.required, Validators.pattern(RegexEnum.PASSWORD)]
       }),
     });
   }

@@ -1,6 +1,3 @@
-<div class="pt-3 pb-2 mb-3 border-bottom">
-    <a (click)="export()" class="btn btn-sm btn-outline-secondary">Export</a>
-  </div>
   
   <div class="table-responsive">
     <table class="table table-sm">
@@ -22,7 +19,7 @@
           <td>{{order.total}}</td>
           <td>
             <div class="btn-group mr-2">
-              <a class="btn btn-sm btn-outline-secondary" (click)="select(order.id)">View</a>
+              <a class="btn btn-sm btn-outline-info" (click)="select(order.id)"><i class="ri-eye-fill"></i> View</a>
             </div>
           </td>
         </tr>
