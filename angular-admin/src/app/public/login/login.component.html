@@ -1,22 +1,16 @@
 <main class="form-signin w-100 m-auto">
     <form [formGroup]="form" (submit)="submit()">
-        <img src="assets/images/manageable.png" alt="">
+        <img src="assets/images/manageable.png" alt="logo de l'application">
         <h1 class="h3 mb-3 fw-normal">Please Sign In</h1>
 
         <input formControlName="email" name="email"  type="email" class="form-control" placeholder="name@example.com">
         <div *ngIf="form.get('email').errors?.['required']">
             Email is required.
         </div>
-        <div *ngIf="form.get('email').errors?.['email']">
-            Email not valid.
-        </div>
 
         <input formControlName="password" name="password" type="password" class="form-control" placeholder="Password">
         <div *ngIf="form.get('password').errors?.['required']">
             Password is required.
-        </div>
-        <div *ngIf="form.get('password').errors?.['pattern']">
-            Password not valid.
         </div>
 
         <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
